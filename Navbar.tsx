@@ -11,11 +11,11 @@ export function Navbar(){
             <span className="logo-f">f</span>lowlee
           </div>
           <ul className="nav-links">
-            <li><a href="#chisiamo">Chi siamo</a></li>
-            <li><a href="#blog">Blog</a></li>
+            <li><a href="#chisiamo" ><div className="nav-btn" >Chi siamo</div></a></li>
+            <li><a href="#blog"><div className="nav-btn">Blog</div></a></li>
           </ul>
         </div>
-        
+
         <div className="nav-right">
           <div className="lang-selector">
             <span className="globe-icon">🌐</span>

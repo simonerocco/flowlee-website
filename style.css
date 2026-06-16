@@ -1,43 +1,61 @@
+
+.primo-testo{
+    padding-top: 150;
+    font-size: 40;
+}
+.secondo-testo{
+    
+    font-size: 40;
+}
+
 /* Contenitore principale fissato in alto */
 /* ==========================================================================
    Contenitore principale della Navbar (Il guscio esterno al 100%)
    ========================================================================== */
 .navbar {
-  /* Blocca la navbar in cima allo schermo: non si muove durante lo scroll */
+  /* Blocca la navbar in alto rispetto allo schermo */
   position: fixed;
-  top: 0;
-  left: 0;
   
-  /* Forza la barra a estendersi per tutta la larghezza del monitor */
-  width: 100%;
+  /* Distanza dal soffitto dello schermo: crea lo spazio in alto */
+  top: 20px; 
   
-  /* Altezza fissa della navbar (lo standard per le barre di navigazione) */
+  /* Distanza dal bordo sinistro: crea lo spazio a sinistra */
+  left: 5%; 
+  
+  /* La navbar occupa il 90% della larghezza, lasciando in automatico il 5% di spazio a destra */
+  width: 90%; 
+  
+  /* Altezza standard della barra */
   height: 80px;
   
-  /* Colore bianco con opacità al 95%. Crea un effetto semi-trasparente moderno */
-  background-color: rgba(255, 255, 255, 0.95);
+  /* EFFETTO GLASS (VETRO): */
+  /* 1. Sfondo bianco ma MOLTO trasparente (opacità al 40%) */
+  background-color: rgba(255, 255, 255, 0.4); 
   
-  /* Attiva il layout Flexbox per gestire la disposizione degli elementi interni */
+  /* 2. La riga magica: sfoca tutto ciò che si trova DIETRO la navbar (effetto iOS/Apple) */
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px); /* Supporto extra per Safari (iPhone/Mac) */
+  
+  /* 3. Un leggerissimo bordino bianco semi-trasparente per simulare il riflesso del vetro */
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  
+  /* Smussa gli angoli per completare l'effetto "capsula fluttuante" */
+  border-radius: 40px; 
+  
+  /* Attiva Flexbox per centrare il contenuto interno */
   display: flex;
-  
-  /* Centra il contenuto interno (il .navbar-container) sull'asse orizzontale */
   justify-content: center;
-  
-  /* Centra il contenuto interno verticalmente (allineamento perfetto a metà altezza) */
   align-items: center;
   
-  /* Livello di priorità visiva: assicura che la navbar rimanga sempre "sopra" gli altri elementi */
-  z-index: 1000;
-  
-  /* Include padding e bordi nel calcolo della larghezza per evitare che sballi il layout */
-  box-sizing: border-box;
-  
-  /* Font di sistema per un rendering rapido, pulito ed elegante (stile Apple e Windows) */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  
-  /* NOTA: Manca l'unità di misura (px). Inoltre, essendo position:fixed al 100%, 
-     smussa gli angoli ma si nota solo se la barra si stacca dai bordi. */
-  border-radius: 50px;
+  /* Priorità visiva e ombreggiatura morbida per dare profondità */
+  /* Mantiene la navbar sempre in primo piano sopra agli altri elementi */
+ z-index: 1000;           
+  /* Include bordi e padding nelle misure senza far sballare la larghezza */        
+  box-sizing: border-box;                   
+   /* Crea un'ombra morbida e trasparente per dare l'effetto di fluttuazione */                
+  box-shadow: 0 8px 40px 40px rgba(31, 38, 135, 0.07);         
+  /* Usa i font moderni di sistema per massima velocità e pulizia */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
 }
 
 /* ==========================================================================
@@ -58,9 +76,9 @@
   
   /* Spinge .nav-left tutto a sinistra e .nav-right tutto a destra, lasciando il vuoto al centro */
   justify-content: space-between;
-  
-  /* Allinea perfettamente il blocco sinistro e destro sulla stessa linea verticale */
-  align-items: center;
+
+    /* Allinea perfettamente il blocco sinistro e destro sulla stessa linea verticale */
+    align-items: center;
 }
 
 /* ==========================================================================
@@ -74,7 +92,7 @@
   align-items: center;
   
   /* Crea uno spazio fisso di 48px tra la fine del logo e l'inizio del primo link */
-  gap: 48px;
+  gap: 45px;
 }
 
 /* Stile del testo del Logo */
@@ -111,12 +129,11 @@
   
   /* ATTENZIONE: Un padding di 100px (manca 'px') deforma la lista e spinge giù i link. 
      Dovrebbe essere resettato a 0 come il margine per un allineamento pulito. */
-  padding: 100px;
+  padding: 50px;
   
   /* Spazio uniforme di 24px tra una voce del menu e l'altra */
-  gap: 24px;
+  gap: 5px;
 }
-
 /* Stile dei singoli link ipertestuali del menu */
 .nav-links a {
   /* Rimuove la classica sottolineatura blu dei link */
@@ -138,7 +155,25 @@
 /* Comportamento del link quando l'utente ci passa sopra con il mouse */
 .nav-links a:hover {
   /* Rimane nero (uguale allo stato normale). Puoi cambiarlo con il viola (#7b57b9) per dare un feedback visivo! */
-  color: #000000;
+  color:#666666;
+  
+}
+/* Stato normale del bottone */
+.nav-btn {
+  border: 1 solid transparent; /* Il bordo c'è già, ma è invisibile */
+  transition: border-color 0.2s ease; /* Rende l'apparizione del bordo fluida */
+  border-radius: 30;
+  width: 90;
+  height: 30;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* Stato Hover */
+.nav-btn:hover {
+  border-color: #666666; /* Cambia solo il colore, lo spessore non si muove! */
+  
 }
 
 /* ==========================================================================
@@ -226,4 +261,69 @@
   
   /* Rende il bottone leggermente trasparente al 95% per dare l'effetto di "click dinamico" */
   opacity: 0.95;
+}
+
+.img{
+    width: 900;
+     transition: transform 0.2s, opacity 0.2s;
+     border-radius: 10;
+    margin-top: 60; 
+    box-shadow: 0 4px 10px rgba(123, 85, 169, 0.2);
+}
+.img:hover{
+    transform: translateY(-10px);
+
+    box-shadow: 0 4px 10px rgba(147, 81, 228, 0.719);
+}
+
+.imghover{
+    position: absolute;
+    width: 45%;
+    left: 470;
+    top: 650;
+ transition: transform 0.5s, opacity 0.2s;
+}
+.imghover:hover{
+    transform:translateY(-10px);
+}
+
+.container-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.button{
+    align-items: center;
+    background-color: white;
+    color: black;
+    border-color: purple;
+    border-radius: 30; 
+    border-width: 2;
+   margin-top: 20;
+   margin-bottom: 10;
+   width: 150;
+   height: 40;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.button:hover{
+transform: translateY(-5px);
+ background-color: rgba(255, 255, 255, 0.4); 
+ border-color: #666666;
+ border-width: 0.5;
+}
+.chisiamo{
+background: linear-gradient(to left,#eb7e7e, #8466c3);;
+  
+  /* 2. Diciamo allo sfondo di ritagliarsi ricalcando ESATTAMENTE la forma del testo */
+  background-clip: text;
+  -webkit-background-clip: text; /* Supporto fondamentale per Safari e Chrome */
+  
+  /* 3. Rendiamo il testo trasparente, così lo sfondo sfumato sotto diventa visibile */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Supporto extra per i browser basati su WebKit */
+  
+  /* Opzionale: un font bello grande e in grassetto fa risaltare molto di più la sfumatura */
+  font-size: 20;
+  
 }
