@@ -1,0 +1,229 @@
+/* Contenitore principale fissato in alto */
+/* ==========================================================================
+   Contenitore principale della Navbar (Il guscio esterno al 100%)
+   ========================================================================== */
+.navbar {
+  /* Blocca la navbar in cima allo schermo: non si muove durante lo scroll */
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  /* Forza la barra a estendersi per tutta la larghezza del monitor */
+  width: 100%;
+  
+  /* Altezza fissa della navbar (lo standard per le barre di navigazione) */
+  height: 80px;
+  
+  /* Colore bianco con opacità al 95%. Crea un effetto semi-trasparente moderno */
+  background-color: rgba(255, 255, 255, 0.95);
+  
+  /* Attiva il layout Flexbox per gestire la disposizione degli elementi interni */
+  display: flex;
+  
+  /* Centra il contenuto interno (il .navbar-container) sull'asse orizzontale */
+  justify-content: center;
+  
+  /* Centra il contenuto interno verticalmente (allineamento perfetto a metà altezza) */
+  align-items: center;
+  
+  /* Livello di priorità visiva: assicura che la navbar rimanga sempre "sopra" gli altri elementi */
+  z-index: 1000;
+  
+  /* Include padding e bordi nel calcolo della larghezza per evitare che sballi il layout */
+  box-sizing: border-box;
+  
+  /* Font di sistema per un rendering rapido, pulito ed elegante (stile Apple e Windows) */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* NOTA: Manca l'unità di misura (px). Inoltre, essendo position:fixed al 100%, 
+     smussa gli angoli ma si nota solo se la barra si stacca dai bordi. */
+  border-radius: 50px;
+}
+
+/* ==========================================================================
+   Contenitore interno (Limita la larghezza per non disperdere gli elementi)
+   ========================================================================== */
+.navbar-container {
+  /* Occupa tutto lo spazio disponibile fino al raggiungimento della max-width */
+  width: 100%;
+  
+  /* Impedisce alla navbar di allargarsi oltre i 1200px su monitor molto grandi */
+  max-width: 1200px;
+  
+  /* Crea un cuscinetto di sicurezza di 15px a destra e sinistra per non far toccare i bordi */
+  padding: 0 15px;
+  
+  /* Attiva Flexbox per posizionare i blocchi Macro (Sinistra e Destra) */
+  display: flex;
+  
+  /* Spinge .nav-left tutto a sinistra e .nav-right tutto a destra, lasciando il vuoto al centro */
+  justify-content: space-between;
+  
+  /* Allinea perfettamente il blocco sinistro e destro sulla stessa linea verticale */
+  align-items: center;
+}
+
+/* ==========================================================================
+   Macro-Blocco Sinistro: Logo + Menu Link
+   ========================================================================== */
+.nav-left {
+  /* Mette il logo e la lista dei link sulla stessa linea orizzontale */
+  display: flex;
+  
+  /* Centra verticalmente il logo e i link tra di loro */
+  align-items: center;
+  
+  /* Crea uno spazio fisso di 48px tra la fine del logo e l'inizio del primo link */
+  gap: 48px;
+}
+
+/* Stile del testo del Logo */
+.navbar-logo {
+  /* Dimensione generosa del font per renderlo visibile */
+  font-size: 1.6rem;
+  
+  /* Grassetto marcato per dare importanza al brand */
+  font-weight: 700;
+  
+  /* Colore scuro tendente al viola scuro, preso dalla palette Flowlee */
+  color: #2c1b4d;
+  
+  /* Avvicina leggermente le lettere tra loro per un look più compatto e di design */
+  letter-spacing: -0.5px;
+}
+
+/* Stile speciale per la prima lettera del logo ("f") */
+.logo-f {
+  /* Colore viola più acceso per spezzare il logo come nel sito reale */
+  color: #7b57b9;
+}
+
+/* Lista dei link di navigazione (Chi siamo, Blog) */
+.nav-links {
+  /* Mette "Chi siamo" e "Blog" in linea orizzontale */
+  display: flex;
+  
+  /* Rimuove i pallini neri predefiniti delle liste HTML (ul) */
+  list-style: none;
+  
+  /* Resetta il margine esterno predefinito del browser */
+  margin: 0;
+  
+  /* ATTENZIONE: Un padding di 100px (manca 'px') deforma la lista e spinge giù i link. 
+     Dovrebbe essere resettato a 0 come il margine per un allineamento pulito. */
+  padding: 100px;
+  
+  /* Spazio uniforme di 24px tra una voce del menu e l'altra */
+  gap: 24px;
+}
+
+/* Stile dei singoli link ipertestuali del menu */
+.nav-links a {
+  /* Rimuove la classica sottolineatura blu dei link */
+  text-decoration: none;
+  
+  /* Colore nero pieno per i testi dei link */
+  color: #000000;
+  
+  /* Dimensione del testo leggermente più piccola rispetto al logo */
+  font-size: 0.95rem;
+  
+  /* Peso del font normale (non in grassetto) per non appesantire il design */
+  font-weight: 400;
+  
+  /* Transizione fluida di 0.2 secondi quando cambia il colore (al passaggio del mouse) */
+  transition: color 0.2s;
+}
+
+/* Comportamento del link quando l'utente ci passa sopra con il mouse */
+.nav-links a:hover {
+  /* Rimane nero (uguale allo stato normale). Puoi cambiarlo con il viola (#7b57b9) per dare un feedback visivo! */
+  color: #000000;
+}
+
+/* ==========================================================================
+   Macro-Blocco Destro: Selettore Lingua + Bottone CTA
+   ========================================================================== */
+.nav-right {
+  /* Mette l'icona della lingua e il bottone sulla stessa linea orizzontale */
+  display: flex;
+  
+  /* Centra verticalmente il selettore lingua e il bottone viola */
+  align-items: center;
+  
+  /* Spazio di 24px tra il selettore della lingua e il bottone */
+  gap: 24px;
+}
+
+/* Contenitore del selettore lingua (Mondo + Freccia) */
+.lang-selector {
+  /* Allinea l'emoji del mondo e la freccetta in orizzontale */
+  display: flex;
+  
+  /* Li centra verticalmente */
+  align-items: center;
+  
+  /* Spazio millimetrico (4px) tra l'icona del mondo e la freccetta */
+  gap: 4px;
+  
+  /* Grigio neutro per non rubare l'attenzione dal bottone principale */
+  color: #666666;
+  
+  /* Trasforma il cursore del mouse in una manina per far capire che è cliccabile */
+  cursor: pointer;
+  
+  /* Dimensione del testo allineata ai link del menu */
+  font-size: 0.95rem;
+}
+
+/* Regolazione millimetrica per la freccetta della lingua */
+.arrow-down {
+  /* Rende la freccia leggermente più piccola delle scritte */
+  font-size: 0.8rem;
+  
+  /* Permette di spostare la freccia rispetto alla sua posizione naturale */
+  position: relative;
+  
+  /* Alza la freccetta di 2px verso l'alto per allinearla visivamente al testo */
+  top: -2px;
+}
+
+/* ==========================================================================
+   Il Bottone Sfumato Viola di Flowlee (Call to Action)
+   ========================================================================== */
+.btn-demo-header {
+  /* Crea lo sfondo sfumato che parte da un viola chiaro a sinistra e va verso un blu a destra */
+  background: linear-gradient(135deg, #7b55a9 0%, #3b4ca8 100%);
+  
+  /* Colore del testo del bottone (Bianco) */
+  color: #ffffff;
+  
+  /* Rimuove la sottolineatura dal link del bottone */
+  text-decoration: none;
+  
+  /* Spaziatura interna: 12px sopra/sotto e 28px a destra/sinistra per dargli la forma rettangolare */
+  padding: 12px 28px;
+  
+  /* Arrotonda gli angoli per renderlo completamente a "capsula" (stile pillola) */
+  border-radius: 24px;
+  
+  /* Dimensione del testo del bottone */
+  font-size: 0.95rem;
+  
+  /* Spessore medio del font per renderlo leggibile sopra la sfumatura scura */
+  font-weight: 500;
+  
+  /* Aggiunge un'ombra viola leggerissima e sfocata sotto il bottone (effetto profondità) */
+  box-shadow: 0 4px 14px rgba(123, 85, 169, 0.2);
+  
+  /* Transizione fluida quando il bottone si sposta o cambia opacità (hover) */
+  transition: transform 0.2s, opacity 0.2s;
+}
+/* Effetto visivo quando l'utente passa il mouse sopra il bottone */
+.btn-demo-header:hover {
+  /* Sposta impercettibilmente il bottone verso l'alto di 1px, simulando un sollevamento tridimensionale */
+  transform: translateY(-1px);
+  
+  /* Rende il bottone leggermente trasparente al 95% per dare l'effetto di "click dinamico" */
+  opacity: 0.95;
+}
