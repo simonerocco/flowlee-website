@@ -1,21 +1,32 @@
-import { APITester } from "./APITester";
-import "./index.css";
-import immagine from "./2.png"
-import immagine2 from "./3.png"
-import logo from "./logo.svg";
-import reactLogo from "./react.svg";
-import { Navbar } from "../Navbar";
-import { Gifpart } from "../Gifpart";
+import "./style.css";
+import "./index.css"
+import "./FeatureSection.css";
+import "./FaqSection.css";
+import image from "./2.png";
+import image2 from "./3.png";
+import image3 from "./5.png";
+import image4 from "./footer.png";
+import { Navbar } from "./components/Navbar";
+import { Gifpart } from "./components/Gifpart";
+import timeline from "./timelineprovvisoria.png";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./components/Carousel"
+import { FaqSection } from "./components/FaqSection";
 
 export function App() {
+
   return (
     <div className="app">
       <Navbar />
-      
       <div >
         <h2 className="primo-testo">Smetti di gestire il lavoro.
           <br />Inizia a farlo funzionare.</h2>
-        <p>Flowlee trasforma il lavoro quotidiano in priorità, assegnazioni e prossimi <br />
+        <p >Flowlee trasforma il lavoro quotidiano in priorità, assegnazioni e prossimi <br />
           step, senza chiederti aggiornamenti manuali. <br />
         </p>
       </div>
@@ -24,8 +35,8 @@ export function App() {
         <button className="button">Come Funziona</button>
       </div>
       <div className="container-img">
-        <img src={immagine} className="img" />
-        <div> <img src={immagine2} className="imghover" /></div>
+        <img src={image} className="img" />
+        <div> <img src={image2} className="imghover" /></div>
       </div>
       <div>
         <p className="chisiamo">CHI SIAMO?</p>
@@ -35,8 +46,29 @@ export function App() {
           organizzare il lavoro, senza <br />
           appesantire il team.</h2>
       </div>
-      <Gifpart/>
+      <Gifpart />
+
+      <div>
+        <p className="chisiamo">MAI COSÌ SEMPLICE</p>
+        <h2 className="secondo-testo">Come funziona </h2>
+      </div>
+      <div>
+        <img src={timeline} className="timeline" />
+      </div>
+      <div>
+        <p className="chisiamo">INTERAGISCI E ORGANIZZA</p>
+        <h2 className="secondo-testo">Scrivi, carica, parla. Al resto <br />pensa Flowlee</h2>
+      </div>
+      <div className="carousel-container">
+        <p> Spazio per il carosello, che non funziona</p>
+      </div>
+      <FaqSection />
+      <div className="img-container-2">
+        <img src={image3} className="img-2" />
+        <h2 className="text-absolute">Scopri come <br/>Flowlee può aiutare <br /> il tuo team</h2>
+      </div>
     </div>
+   
   );
 }
 
