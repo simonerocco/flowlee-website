@@ -1,0 +1,231 @@
+/* ==========================================================================
+   IL CONTENITORE GLOBALE (Sfondo con le colline viola)
+   ========================================================================== */
+.footer-global-wrapper {
+  width: 100%;
+  position: relative;          /* Serve come punto di riferimento per l'allineamento dei blocchi interni */
+  
+  /* CARICAMENTO SFONDO: Carica l'immagine delle colline viola */ 
+  background-image: url('./footer.png'); /* Percorso relativo all'immagine delle colline */
+  background-repeat: no-repeat;/* Impedisce all'immagine di ripetersi a scacchiera se la pagina è molto lunga */
+  background-position: bottom center; /* Incolla l'illustrazione delle colline esattamente sul fondo al centro */
+  background-size: 100% auto;  /* L'immagine copre il 100% della larghezza e calcola l'altezza in modo proporzionale */
+  
+  padding-bottom: 60px;        /* Margine interno finale per non far attaccare la card al bordo estremo dello schermo */
+  display: flex;
+  flex-direction: column;      /* Dispone il Form e la Card del Footer in verticale, uno sotto l'altro */
+  align-items: center;         /* Centra perfettamente sia il form che il footer in mezzo alla pagina */
+}
+
+/* ==========================================================================
+   IL FORM DI CONTATTO (Struttura e distanziamenti)
+   ========================================================================== */
+.contact-form-section {
+  width: 70%;
+  max-width: 400px;            /* Fissa una larghezza massima per mantenere il form compatto come in foto */
+  margin-bottom: 80px;         /* Spazio vuoto tra la fine del form e l'inizio della card del footer */
+  padding: 0 24px;             /* Evita che i campi tocchino i bordi dello schermo sui telefoni */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;      /* Dispone i campi di input in verticale */
+  gap: 20px;                   /* Spazio fisso di 20px tra una casella di testo e la successiva */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;      /* Dispone la scritta della label sopra la rispettiva casella grigia */
+  align-items: flex-start;     /* Allinea i testi a sinistra */
+  gap: 8px;                    /* Distanza tra la scritta descrittiva e la casella di digitazione */
+}
+
+.input-group label {
+  font-size: 0.9rem;           /* Testo leggermente più piccolo e discreto */
+  color: #666666;              /* Grigio scuro opaco */
+  font-weight: 500;            /* Spessore medio per aumentarne la leggibilità */
+}
+
+/* STILE DELLE CASELLINE DI INPUT (Input di testo e Select unificati) */
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 14px 16px;          /* Padding interno generoso per rendere le caselle alte e facili da cliccare */
+  background-color: #f2f2f5;   /* Sfondo grigio chiarissimo, esattamente come nello screenshot */
+  border: 1px solid transparent;/* Nessun bordo visibile nello stato iniziale */
+  border-radius: 12px;         /* Angoli arrotondate e morbidi */
+  font-size: 1rem;
+  color: #1d1d1f;              /* Testo interno quasi nero */
+  box-sizing: border-box;      /* Include il padding nella larghezza per evitare che le caselle escano dai bordi */
+  outline: none;               /* Rimuove il bordino blu di selezione automatico dei browser Chrome/Safari */
+  transition: all 0.2s ease;   /* Transizione fluida quando l'utente clicca sulla casella */
+  appearance: none;            /* Rimuove lo stile grafico predefinito dei sistemi operativi sul tag select */
+}
+
+/* FRECCETTA PERSONALIZZATA SULLA TENDINA SELECT */
+.input-group select {
+  /* Inietta un'icona SVG di una freccia verso il basso direttamente via codice */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center; /* Blocca la freccia a 16px dal bordo destro e centrata in altezza */
+  background-size: 16px;       /* Dimensione controllata della freccetta */
+}
+
+/* EFFETTO FOCUS (Quando l'utente clicca all'interno di un campo per scrivere) */
+.input-group input:focus,
+.input-group select:focus {
+  background-color: #ffffff;   /* Lo sfondo da grigio diventa bianco puro */
+  border-color: #7b57b9;       /* Compare un sottile bordo viola coordinato con il brand Flowlee */
+}
+
+/* IL BOTTONE SUBMIT IN BASSO */
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background-color: #2d2d30;   /* Sfondo scuro antracite dal design molto solido */
+  color: #ffffff;              /* Testo bianco */
+  border: none;                /* Rimuove i bordi nativi */
+  border-radius: 12px;         /* Angoli arrotondati uguali a quelli dei campi di testo sopra */
+  font-size: 1rem;
+  font-weight: 600;            /* Testo in semigrassetto */
+  cursor: pointer;             /* Cambia l'icona del mouse in manina */
+  transition: background-color 0.2s ease;
+  margin-top: 10px;            /* Distanza extra dal campo superiore */
+}
+
+.btn-submit:hover {
+  background-color: #1a1a1c;   /* Diventa ancora più scuro quando ci si passa sopra con il mouse */
+}
+
+/* ==========================================================================
+   LA CARD DEL FOOTER BIANCA (Effetto fluttuante sulle onde viola)
+   ========================================================================== */
+.main-footer-card {
+  width: calc(100% - 48px);    /* Occupa tutto lo spazio orizzontale togliendo 24px di margine per lato */
+  max-width: 1140px;           /* Si blocca a 1140px per non allargarsi all'infinito sui monitor dei PC */
+  background-color: rgba(255, 255, 255, 0.95); /* Sfondo bianco trasparente al 95% per far intravedere i colori sotto */
+  backdrop-filter: blur(10px); /* EFFETTO VETRO PREMIUM (Glassmorphic): Sfoca le colline viola che passano dietro alla card */
+  border-radius: 32px;         /* Angoli molto ampi e stondati come si vede nella foto */
+  padding: 60px;               /* Spazio interno generoso per dare aria a tutti i link */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04); /* Ombra estesa e morbidissima per far galleggiare la card nello spazio */
+  border: 1px solid rgba(255, 255, 255, 0.8);  /* Bordino chiaro che simula il riflesso sul vetro dell'effetto glass */
+  box-sizing: border-box;
+  opacity: 85%;                  /* Inizialmente invisibile per l'effetto fade-in */
+}
+
+/* STRUTTURA BLOCCO SUPERIORE LINK */
+.footer-top-row {
+  display: flex;
+  justify-content: space-between; /* Spinge la descrizione a sinistra e i link tutto a destra */
+  align-items: flex-start;        /* Allinea l'inizio di tutte le colonne in alto */
+  flex-wrap: wrap;                /* Se lo schermo si stringe troppo, manda i link sotto il logo in automatico */
+  gap: 40px;
+}
+
+/* Colonna di sinistra (Logo e testo) */
+.footer-brand-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 300px;            /* Stringe il testo descrittivo per farlo andare a capo in modo armonioso */
+}
+
+.footer-logo {
+  height: 32px;                /* Fissa l'altezza del logo */
+  margin-bottom: 20px;         /* Spazio sotto al logo */
+}
+
+.footer-tagline {
+  font-size: 1.05rem;
+  color: #515154;
+  line-height: 1.5;            /* Aumenta l'interlinea per rendere la lettura più rilassata */
+  margin: 0 0 24px 0;          /* Resetta i margini lasciando solo spazio sul fondo */
+}
+
+/* CERCHIETTO LINKEDIN */
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;         /* Centra la scritta "in" perfettamente in mezzo al cerchio */
+  width: 40px;
+  height: 40px;
+  background-color: #3d3d40;   /* Tondino scuro come da foto */
+  color: #ffffff;
+  border-radius: 50%;          /* Trasforma il quadrato in un cerchio perfetto */
+  text-decoration: none;       /* Rimuove la sottolineatura dal link */
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* IL BLOCCO DELLE TRE COLONNE DEI LINK (Pages, Information, Contact) */
+.footer-links-wrapper {
+  display: flex;
+  gap: 60px;                   /* Distanza di 60px orizzontali tra una colonna e l'altra */
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;      /* Sviluppa i link all'interno della colonna in verticale */
+  align-items: flex-start;     /* Allinea i testi a sinistra */
+  text-align: left;
+  min-width: 120px;            /* Larghezza minima di sicurezza per ogni colonna */
+}
+
+.footer-column h4 {
+  font-size: 0.85rem;
+  font-weight: 700;            /* Scritta in grassetto */
+  color: #1d1d1f;
+  letter-spacing: 0.5px;       /* Distanzia leggermente le lettere dei titoli in maiuscolo */
+  margin: 0 0 20px 0;          /* Spazio tra il titolo della colonna e il primo link */
+}
+
+.footer-column a {
+  font-size: 0.95rem;
+  color: #666666;              /* Grigio neutro per i link */
+  text-decoration: none;
+  margin-bottom: 14px;         /* Distanza verticale costante tra i link */
+  transition: color 0.2s ease; /* Fluidità di cambio colore al passaggio del mouse */
+}
+
+.footer-column a:hover {
+  color: #7b57b9;              /* All'hover il link si colora del viola aziendale di Flowlee */
+}
+
+/* LINEA DI DIVISIONE SOTTILE */
+.footer-divider {
+  border: none;
+  height: 1px;
+  background-color: #e5e5ea;     /* Linea grigia finissima di sbarramento strutturale */
+  margin: 40px 0;                /* Spazio simmetrico di 40px sopra e sotto la riga */
+}
+
+/* PARTE BASSA (Dati aziendali) */
+.footer-bottom-row {
+  text-align: left;
+  font-size: 0.88rem;
+  color: #86868b;              /* Grigio chiaro legale */
+  line-height: 1.6;
+}
+
+.footer-bottom-row a {
+  color: #86868b;
+  text-decoration: none;
+  border-bottom: 1px solid transparent; /* Crea una sottolineatura invisibile pronta per l'hover */
+}
+
+.footer-bottom-row a:hover {
+  border-color: #86868b;         /* Mostra la sottolineatura quando l'utente passa sopra alla mail legale */
+}
+
+/* MEDIA QUERY: RESPONSIVE COMPORTAMENTO SU SMARTPHONE */
+@media (max-width: 768px) {
+  .main-footer-card {
+    padding: 30px 20px;          /* Rimpicciolisce i margini interni della card per non rubare spazio allo schermo del telefono */
+  }
+  .footer-links-wrapper {
+    gap: 30px;                   /* Avvicina le colonne dei link */
+    width: 100%;
+  }
+}

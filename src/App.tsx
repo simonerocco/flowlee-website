@@ -2,10 +2,10 @@ import "./style.css";
 import "./index.css"
 import "./FeatureSection.css";
 import "./FaqSection.css";
+import "./FooterSection.css";
 import image from "./2.png";
 import image2 from "./3.png";
 import image3 from "./5.png";
-import image4 from "./footer.png";
 import { Navbar } from "./components/Navbar";
 import { Gifpart } from "./components/Gifpart";
 import timeline from "./timelineprovvisoria.png";
@@ -17,11 +17,24 @@ import {
   CarouselPrevious,
 } from "./components/Carousel"
 import { FaqSection } from "./components/FaqSection";
-
+import { FooterSection } from "./components/FooterSection";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ChiSiamo } from './Chi-Siamo'; // La nuova pagina appena creata
 export function App() {
 
   return (
     <div className="app">
+      <Router>
+      {/* La Navbar resta fuori dalle Routes così è visibile in tutte le pagine! */}
+      <Navbar /> 
+      
+      <Routes>
+        {/* Quando l'URL è "/", mostra la Landing Page principale */}
+        
+        {/* Quando l'URL è "/chi-siamo", mostra la nuova pagina */}
+        <Route path="/chi-siamo" element={<ChiSiamo />} />
+      </Routes>
+    </Router>
       <Navbar />
       <div >
         <h2 className="primo-testo">Smetti di gestire il lavoro.
@@ -67,6 +80,7 @@ export function App() {
         <img src={image3} className="img-2" />
         <h2 className="text-absolute">Scopri come <br/>Flowlee può aiutare <br /> il tuo team</h2>
       </div>
+<FooterSection />
     </div>
    
   );

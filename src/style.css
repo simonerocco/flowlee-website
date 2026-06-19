@@ -327,20 +327,65 @@ background: linear-gradient(to left,#eb7e7e, #8466c3);;
   border-radius: 70px;
   align-items: flex-start; 
 }
-.img-2{
-  width: 65%;
-}
-.text-absolute{
-  font-size: 40px;
-  position: absolute;
-  bottom: 140px;
+/* ==========================================================================
+   IL CONTENITORE PADRE (Il recinto di riferimento)
+   ========================================================================== */
+.img-container-2 {
   display: flex;
-    justify-content: center;
-    align-items: center;
-  left: 500px;
+  justify-content: center;     /* Centra l'immagine orizzontalmente nel flusso della pagina */
+  align-items: center;         /* Centra l'immagine verticalmente */
+  
+  /* POSITION RELATIVE: È obbligatoria! Dice al testo absolute: 
+     "Tu devi calcolare i tuoi spazi e i tuoi margini solo dentro questo recinto" */
+  position: relative; 
+  
+  width: 100%;                 /* Prende tutta la larghezza della pagina */
+  margin: 100px 0;             /* Spazio sopra e sotto la sezione per far respirare il layout */
 }
-.img-container-2{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+/* ==========================================================================
+   L'IMMAGINE DI SFONDO
+   ========================================================================== */
+.img-2 {
+  width: 65%;                  /* Manteniamo la tua impostazione: occupa il 65% del padre */
+  height: auto;                /* Mantiene le proporzioni corrette senza schiacciarsi */
+  display: block;
+}
+
+/* ==========================================================================
+   IL TESTO IN ABSOLUTE (Perfettamente centrato e dinamico)
+   ========================================================================== */
+.text-absolute {
+  position: absolute;          /* Stacca il testo dal flusso e lo fa fluttuare sopra l'immagine */
+  
+  /* IL SEGRETO DELLA CENTRATURA PERFETTA: */
+  left: 50%;                   /* 1. Spinge l'angolo sinistro del testo esattamente al centro matematico dello schermo */
+  transform: translateX(-50%); /* 2. Tira indietro il testo verso sinistra del 50% della sua stessa larghezza, centrandolo al millimetro */
+  
+  bottom: 40%;                 /* Usa una percentuale invece di 140px: così si adatta proporzionalmente se l'immagine si rimpicciolisce */
+  
+  width: 100%;                 /* Permette al testo di estendersi se necessario */
+  max-width: 600px;            /* IMPERATIVO: Dice al testo "quando arrivi a 600px di larghezza vai a capo da solo". Sostituisce i vecchi <br/> */
+  
+  font-size: 40px;             /* Dimensione del font come da tua impostazione */
+  font-weight: 700;            /* Grassetto marcato */
+  color: #1d1d1f;              /* Colore scuro stile Apple */
+  text-align: center;          /* Centra le righe di testo tra di loro */
+  line-height: 1.2;            /* Avvicina le righe per un look tipografico moderno */
+  margin: 0;                   /* Rimuove i margini di default del tag h2 */
+}
+
+/* ==========================================================================
+   RESPONSIVE (Ottimizzazione per smartphone)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .img-2 {
+    width: 90%;                /* Sul telefono l'immagine ha bisogno di più spazio per essere visibile */
+  }
+  
+  .text-absolute {
+    font-size: 24px;           /* Rimpicciolisce il testo sui display piccoli per evitare che esca fuori dai bordi */
+    max-width: 80%;            /* Stringe l'area del testo per farlo andare a capo armoniosamente */
+    bottom: 20%;               /* Aggiusta leggermente l'altezza dal fondo per i telefoni */
+  }
 }

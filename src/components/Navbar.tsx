@@ -1,5 +1,6 @@
 import "../style.css";
 import logo from "../logoF.png"
+import { Link } from 'react-router-dom'; // IMPERATIVO: Importa Link
 export function Navbar(){
     return (
        <nav className="navbar">
@@ -8,11 +9,13 @@ export function Navbar(){
         
         <div className="nav-left">
           <div className="navbar-logo">
-         <img src={logo} className="logo"/>
+            {/* Cliccando sul logo torni alla Home principale */}
+        <Link to="/"><img src={logo} className="logo"/></Link>
+         
           </div>
           <ul className="nav-links">
-            <li><a href="#chisiamo" ><div className="nav-btn" >Chi siamo</div></a></li>
-            <li><a href="#blog"><div className="nav-btn">Blog</div></a></li>
+            <li><Link to="/chi-siamo"><div className="nav-btn">Chi siamo</div></Link></li>
+            <li><Link to="/blog"><div className="nav-btn">Blog</div></Link></li>
           </ul>
         </div>
 

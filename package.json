@@ -11,13 +11,15 @@
   "dependencies": {
     "embla-carousel-react": "^8.6.0",
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "react-router-dom": "^7.18.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/bun": "latest",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-router-dom": "^5.3.3",
     "eslint": "^10.5.0",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^17.6.0",

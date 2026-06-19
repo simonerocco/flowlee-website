@@ -1,0 +1,28 @@
+/* ==========================================================================
+   CONTENITORE GENERALE DELLA PAGINA
+   ========================================================================== */
+.chisiamo-container {
+  max-width: 800px;         /* Limita la larghezza del testo a 800px: evita che le righe diventino troppo lunghe e faticose da leggere sui monitor grandi */
+  margin: 120px auto;       /* Spazio verticale: 120px sopra e sotto per far respirare la pagina staccandosi da Navbar e Footer. 'auto' centra il blocco nello schermo */
+  padding: 0 24px;          /* Cuscinetto di sicurezza laterale: impedisce ai testi di incollarsi ai bordi del display sui telefoni */
+  text-align: center;       /* Allinea centralmente tutti i testi contenuti (titolo, sottotitolo e paragrafi) */
+  font-family: sans-serif;  /* Imposta un carattere di tipo bastone (senza grazie) pulito e moderno di fallback */
+}
+
+/* ==========================================================================
+   IL TITOLO PRINCIPALE (Chi Siamo)
+   ========================================================================== */
+.chisiamo-title {
+  font-size: 3rem;          /* Dimensione decisamente grande e d'impatto per l'intestazione principale */
+  color: #1d1d1f;           /* Nero morbido e profondo, molto elegante (stile linee guida Apple) */
+  margin-bottom: 16px;      /* Spazio di 16px sotto al titolo prima che inizi il sottotitolo */
+}
+
+/* ==========================================================================
+   IL SOTTOTITOLO INTRODUTTIVO
+   ========================================================================== */
+.chisiamo-subtitle {
+  font-size: 1.2rem;        /* Carattere leggermente più grande rispetto al testo normale del sito per dare enfasi */
+  color: #666666;           /* Grigio scuro opaco: crea una gerarchia visiva, facendo risaltare di più il titolo nero sopra */
+  margin-bottom: 40px;      /* Ampio spazio vuoto di 40px prima che inizi il blocco dei contenuti veri e propri */
+}
