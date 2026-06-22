@@ -1,26 +1,32 @@
-import "../style.css";
-import ProfileImg from '../camilla.jpeg';
-export function Card() {
-  return (
-    <div className="team-card">
-      {/* 1. SEZIONE SUPERIORE: Immagine e Badge */}
-      <div className="card-image-wrapper">
-        {/* Il badge scuro in alto a sinistra */}
-        <span className="badge-category">Sales</span>
-        {/* La foto profilo del membro del team */}
-        <img src={ProfileImg} alt="Camilla Crucito" className="profile-img" />
-      </div>
+interface CardProps {
+  name: string
+  role: string
+  category: string
+  linkedInUrl: string
+  imageSrc: string
+}
 
-      {/* 2. SEZIONE INFERIORE: Dettagli e Testi */}
-      <div className="card-info">
-        <h3 className="member-name">Camilla Crucito</h3>
-        <p className="member-role">CEO and co-founder</p>
-        
-        {/* Il link di Linkedin con l'emoji del razzo */}
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="linkedin-link">
-          Linkedin <span className="rocket-emoji">🚀</span>
+export function Card({ name, role, category, linkedInUrl, imageSrc }: CardProps) {
+  return (
+    <div className="overflow-hidden rounded-2xl bg-white shadow-md">
+      <div className="relative">
+        <span className="absolute top-3 left-3 rounded-full bg-gray-900 px-3 py-1 text-xs font-medium text-white">
+          {category}
+        </span>
+        <img src={imageSrc} alt={name} className="h-64 w-full object-cover" />
+      </div>
+      <div className="p-4">
+        <h3 className="text-base font-semibold text-gray-900">{name}</h3>
+        <p className="mt-1 text-sm text-gray-500">{role}</p>
+        <a
+          href={linkedInUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-violet-600 transition-colors hover:text-violet-800"
+        >
+          LinkedIn <span>🚀</span>
         </a>
       </div>
     </div>
-  );
+  )
 }
