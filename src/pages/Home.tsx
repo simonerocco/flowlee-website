@@ -20,10 +20,10 @@ export function Home() {
           chiederti aggiornamenti manuali.
         </p>
         <div className="mt-8 flex gap-4">
-          <button className="rounded-full bg-violet-600 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-violet-700">
+          <button className="rounded-[24px] bg-[linear-gradient(135deg,#7b55a9_0%,#3b4ca8_100%)] px-7 py-3 text-sm font-medium text-white shadow-[0_4px_14px_rgba(123,85,169,0.2)] transition-all hover:-translate-y-px hover:opacity-95">
             Richiedi Demo
           </button>
-          <button className="rounded-full border border-gray-300 px-7 py-3 text-sm font-semibold text-gray-700 transition-colors hover:border-gray-400 hover:bg-gray-50">
+          <button className="h-[40px] w-[150px] rounded-[30px] border-2 border-purple-600 bg-white text-sm font-semibold text-black transition-all hover:-translate-y-[5px] hover:bg-white/40">
             Come Funziona
           </button>
         </div>
@@ -38,7 +38,7 @@ export function Home() {
       </section>
 
       <section className="px-8 py-16 text-center">
-        <p className="text-xs font-semibold tracking-widest text-violet-500 uppercase">
+        <p className="bg-gradient-to-l from-[#8466c3] to-[#eb7e7e] bg-clip-text text-[20px] font-bold text-transparent">
           Chi siamo?
         </p>
         <h2 className="mx-auto mt-4 max-w-2xl text-4xl font-bold text-gray-900">
@@ -49,19 +49,19 @@ export function Home() {
       <Gifpart />
 
       <section className="px-8 py-16 text-center">
-        <p className="text-xs font-semibold tracking-widest text-violet-500 uppercase">
+        <p className="bg-gradient-to-l from-[#8466c3] to-[#eb7e7e] bg-clip-text text-[20px] font-bold text-transparent">
           Mai così semplice
         </p>
         <h2 className="mt-4 text-4xl font-bold text-gray-900">Come funziona</h2>
         <img
           src={timeline}
-          className="mx-auto mt-12 w-full max-w-4xl rounded-2xl shadow-lg"
+          className="mx-auto mt-12 w-4/5 rounded-[70px] shadow-[0_4px_10px_rgba(123,85,169,0.2)]"
           alt="Timeline Flowlee"
         />
       </section>
 
       <section className="px-8 py-16 text-center">
-        <p className="text-xs font-semibold tracking-widest text-violet-500 uppercase">
+        <p className="bg-gradient-to-l from-[#8466c3] to-[#eb7e7e] bg-clip-text text-[20px] font-bold text-transparent">
           Interagisci e organizza
         </p>
         <h2 className="mt-4 text-4xl font-bold text-gray-900">
@@ -73,17 +73,15 @@ export function Home() {
 
       <FaqSection />
 
-      <section className="relative overflow-hidden">
-        <img src={image3} className="h-96 w-full object-cover" alt="" />
-        <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-          <h2 className="text-center text-4xl font-bold text-white">
-            Scopri come
-            <br />
-            Flowlee può aiutare
-            <br />
-            il tuo team
-          </h2>
-        </div>
+      <section className="relative my-[100px] flex w-full items-center justify-center">
+        <img src={image3} className="block h-auto w-[65%]" alt="" />
+        <h2 className="absolute bottom-[40%] left-1/2 m-0 w-full max-w-[600px] -translate-x-1/2 text-center text-[40px] leading-[1.2] font-bold text-[#1d1d1f]">
+          Scopri come
+          <br />
+          Flowlee può aiutare
+          <br />
+          il tuo team
+        </h2>
       </section>
 
       <FooterSection />

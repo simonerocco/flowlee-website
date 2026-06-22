@@ -66,22 +66,20 @@ export function ChiSiamo() {
         />
       </div>
 
-      <div className="relative">
-        <p className="px-8 text-xs font-semibold tracking-widest text-violet-500 uppercase">
+      <div className="relative my-[200px] flex w-full flex-col items-center justify-center px-6 py-10">
+        <p className="flex justify-center bg-gradient-to-l from-[#8466c3] to-[#eb7e7e] bg-clip-text pt-[100px] text-[20px] font-bold tracking-[2px] text-transparent">
           Mission
         </p>
-        <img src={image3} className="mt-6 h-72 w-full object-cover" alt="" />
-        <div className="absolute inset-0 flex items-center justify-end pr-16">
-          <h2 className="text-right text-4xl font-bold text-white drop-shadow-lg">
-            Crediamo in una
-            <br />
-            tecnologia che
-            <br />
-            libera potenziale,
-            <br />
-            non che rallenta.
-          </h2>
-        </div>
+        <img src={image3} className="mt-6 block h-auto w-[65%]" alt="" />
+        <h2 className="absolute top-[60%] left-1/2 z-[4] m-0 w-full max-w-[600px] -translate-x-1/2 -translate-y-1/2 text-center text-[40px] leading-[1.25] font-bold tracking-[-1px] text-[#1d1d1f]">
+          Crediamo in una
+          <br />
+          tecnologia che
+          <br />
+          libera potenziale,
+          <br />
+          non che rallenta.
+        </h2>
       </div>
 
       <div className="grid grid-cols-1 gap-4 px-10 py-16 sm:grid-cols-2 lg:grid-cols-3">

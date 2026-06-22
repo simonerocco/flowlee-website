@@ -3,40 +3,41 @@ import { Link } from 'react-router-dom'
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 z-50 w-full bg-white/80 shadow-sm backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
-        <div className="flex items-center gap-10">
+    <nav className="fixed top-5 left-1/2 z-[1000] flex h-20 w-[min(90%,1200px)] -translate-x-1/2 items-center justify-center rounded-[40px] border border-white/30 bg-white/40 shadow-[0_8px_40px_40px_rgba(31,38,135,0.07)] backdrop-blur-[12px]">
+      <div className="flex w-full items-center justify-between px-[15px]">
+        <div className="flex items-center gap-[45px]">
           <Link to="/">
-            <img src={logo} className="h-8 w-auto" alt="Flowlee" />
+            <img src={logo} className="h-[25px] w-[100px]" alt="Flowlee" />
           </Link>
-          <ul className="m-0 flex list-none items-center gap-6 p-0">
+          <ul className="m-0 flex list-none items-center gap-[5px] p-0">
             <li>
-              <Link
-                to="/chi-siamo"
-                className="text-sm font-medium text-gray-700 transition-colors hover:text-violet-600"
-              >
-                Chi siamo
-              </Link>
+              <div className="flex h-[30px] w-[90px] items-center justify-center rounded-[30px] border border-transparent transition-all hover:border-[#666666]">
+                <Link
+                  to="/chi-siamo"
+                  className="text-[0.95rem] font-normal text-black no-underline"
+                >
+                  Chi siamo
+                </Link>
+              </div>
             </li>
             <li>
-              <Link
-                to="/blog"
-                className="text-sm font-medium text-gray-700 transition-colors hover:text-violet-600"
-              >
-                Blog
-              </Link>
+              <div className="flex h-[30px] w-[90px] items-center justify-center rounded-[30px] border border-transparent transition-all hover:border-[#666666]">
+                <Link to="/blog" className="text-[0.95rem] font-normal text-black no-underline">
+                  Blog
+                </Link>
+              </div>
             </li>
           </ul>
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="flex cursor-pointer items-center gap-1 text-gray-500 hover:text-gray-700">
+        <div className="flex items-center gap-6">
+          <div className="flex cursor-pointer items-center gap-1 text-[0.95rem] text-[#666666]">
             <span>🌐</span>
-            <span className="text-sm">⌄</span>
+            <span>⌄</span>
           </div>
           <a
             href="#demo"
-            className="rounded-full bg-violet-600 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-violet-700"
+            className="rounded-[24px] bg-[linear-gradient(135deg,#7b55a9_0%,#3b4ca8_100%)] px-7 py-3 text-[0.95rem] font-medium text-white no-underline shadow-[0_4px_14px_rgba(123,85,169,0.2)] transition-all hover:-translate-y-px hover:opacity-95"
           >
             Richiedi Demo
           </a>

@@ -53,29 +53,29 @@ export function FaqSection() {
   }
 
   return (
-    <section className="mx-auto max-w-3xl px-8 py-24">
-      <h2 className="mb-10 text-center text-4xl font-bold text-gray-900">FAQ</h2>
-      <div className="flex flex-col gap-3">
+    <section className="mx-auto max-w-[1100px] px-6 py-[100px]">
+      <h2 className="mb-10 text-center text-[3rem] font-extrabold text-[#1a1a1a]">FAQ</h2>
+      <div className="flex flex-col gap-4">
         {faqData.map((item) => {
           const isOpen = activeId === item.id
           return (
             <div
               key={item.id}
-              className="cursor-pointer rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100 transition-shadow hover:shadow-md"
+              className="cursor-pointer rounded-[16px] border border-[#f5f5f7] bg-white px-6 py-1 shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-200 hover:-translate-y-[5px] hover:shadow-[0_4px_10px_rgba(147,81,228,0.719)]"
               onClick={() => toggleFaq(item.id)}
             >
-              <div className="flex items-center justify-between">
-                <span className="text-base font-semibold text-gray-900">{item.question}</span>
+              <div className="flex items-center justify-between py-5">
+                <span className="text-[1.15rem] font-semibold text-[#1d1d1f]">{item.question}</span>
                 <span
-                  className={`text-xl font-light text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}
+                  className={`inline-block text-2xl font-light transition-all duration-300 ${isOpen ? 'rotate-45 text-[#7b57b9]' : 'text-[#86868b]'}`}
                 >
                   +
                 </span>
               </div>
               <div
-                className={`overflow-hidden transition-all duration-300 ${isOpen ? 'mt-4 max-h-96' : 'max-h-0'}`}
+                className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[180px] pb-5' : 'max-h-0'}`}
               >
-                <p className="text-sm leading-relaxed text-gray-600">{item.answer}</p>
+                <p className="m-0 text-sm leading-relaxed text-[#7c7c7d]">{item.answer}</p>
               </div>
             </div>
           )
