@@ -305,7 +305,7 @@ transform: translateY(-5px);
  border-width: 0.5;
 }
 .chisiamo{
-background: linear-gradient(to left,#eb7e7e, #8466c3);;
+ background: linear-gradient(to left, #eb7e7e, #8466c3);
   
   /* 2. Diciamo allo sfondo di ritagliarsi ricalcando ESATTAMENTE la forma del testo */
   background-clip: text;
@@ -318,6 +318,7 @@ background: linear-gradient(to left,#eb7e7e, #8466c3);;
   /* Opzionale: un font bello grande e in grassetto fa risaltare molto di più la sfumatura */
   font-size: 20;
   
+  font-weight: 700;
 }
 
 .timeline{

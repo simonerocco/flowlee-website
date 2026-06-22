@@ -81,7 +81,7 @@
   
   /* IL SEGRETO DELLA CENTRATURA SOPRA L'IMMAGINE: */
   left: 50%;                   /* Spinge l'inizio del testo esattamente a metà dello schermo (50%) */
-  top: 55%;                    /* Lo posiziona verticalmente (un filo più in basso del 50% per compensare lo spazio occupato da MISSION) */
+  top: 60%;                    /* Lo posiziona verticalmente (un filo più in basso del 50% per compensare lo spazio occupato da MISSION) */
   transform: translate(-50%, -50%); /* Muove indietro il titolo del 50% della sua stessa grandezza, centrandolo al millimetro */
   
   width: 100%;                 /* Permette al testo di sfruttare l'area interna */
@@ -113,7 +113,7 @@
   
   /* MODIFICA CRUCIALE PER AVVICINARLA: */
   padding-top: 100px;            /* Elimina del tutto il vecchio spazio da 100px che allontanava la scritta verso l'alto */
-  margin: 0 auto 10px auto;    /* Centra il blocco e lascia solo 10px di spazio SOTTO, avvicinandola al titolo */
+      /* Centra il blocco e lascia solo 10px di spazio SOTTO, avvicinandola al titolo */
   
   /* Attiva Flexbox per assicurare che la parola sia perfettamente centrata nello schermo */
   display: flex;

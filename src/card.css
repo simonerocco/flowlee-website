@@ -1,0 +1,117 @@
+/* ==========================================================================
+   IL CONTENITORE PRINCIPALE (La Card)
+   ========================================================================== */
+.team-card {
+  width: 120%;                 /* Si adatta alla larghezza del contenitore padre */
+  max-width: 340px;            /* Fissa una larghezza massima per non far sformare la card */
+  background-color: #ffffff;   /* Sfondo bianco pulito */
+  border-radius: 24px;         /* Angoli molto arrotondati, esattamente come si vede in foto */
+  
+  /* L'OMBRA SFUMATA (Box Shadow): 
+     Crea quel bellissimo effetto tridimensionale morbido e moderno che stacca la card dallo sfondo. */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04), 0 1px 8px rgba(0, 0, 0, 0.02);
+  
+  /* OVERFLOW HIDDEN: Fondamentale! Taglia la foto profilo in alto seguendo 
+     la curvatura dei 24px di border-radius della card, impedendole di sbrodolare fuori. */
+  overflow: hidden;            
+  margin: 10px;              /* Centra la card orizzontalmente all'interno del suo contenitore */
+  display: flex;
+  flex-direction: column;      /* Impila gli elementi in verticale: prima la foto, poi i testi */
+  transition: transform 0.2s ease; /* Transizione fluida per l'effetto movimento al passaggio del mouse */
+}
+
+/* Micro-animazione facoltativa: quando passi sopra con il mouse, la card si solleva di 4px */
+.team-card:hover {
+  transform:translateY(-5px);
+   box-shadow: 0 4px 10px rgba(147, 81, 228, 0.719);
+}
+
+/* ==========================================================================
+   SEZIONE SUPERIORE (Contenitore Immagine e Badge)
+   ========================================================================== */
+.card-image-wrapper {
+  /* POSITION RELATIVE: Fa da perimetro per il badge "Sales". 
+     Dice al badge absolute di posizionarsi basandosi su questo rettangolo e non sulla pagina intera. */
+  position: relative;          
+  
+  width: 100%;
+  height: 280px;               /* Altezza fissa per l'area fotografica, così tutte le card del team saranno uguali */
+  background-color: #f5f5f7;   /* Grigio neutro di sfondo se la foto ci mette un istante a caricarsi */
+}
+
+/* La foto del membro del team */
+.profile-img {
+  width: 100%;
+  height: 100%;
+  
+  /* OBJECT FIT COVER: Il trucco per le immagini. Riempie l'area dei 280px 
+     ritagliando la foto proporzionalmente senza mai schiacciarla o deformarla. */
+  object-fit: cover;           
+  object-position: center top; /* Mantiene l'inquadratura centrata sulla parte alta (il viso) */
+}
+
+/* Il badge scuro in alto a sinistra ("Sales") */
+.badge-category {
+  /* POSITION ABSOLUTE: Stacca il badge e lo fa galleggiare nell'angolo sopra alla foto profilo */
+  position: absolute;          
+  top: 16px;                   /* Distanza di 16px dal bordo superiore */
+  left: 16px;                  /* Distanza di 16px dal bordo sinistro */
+  
+  background-color: #3a3a3c;   /* Grigio antracite molto scuro, come da screenshot */
+  color: #ffffff;              /* Scritta interna bianca */
+  font-size: 0.85rem;          /* Testo piccolo, compatto e leggibile */
+  font-weight: 500;            /* Spessore del font medio */
+  padding: 6px 14px;           /* Spazio interno che allarga il badge creando la forma a pillola */
+  border-radius: 8px;          /* Arrotonda leggermente gli angoli del badge */
+  z-index: 2;                  /* Garantisce che il badge stia sempre sopra l'immagine e mai sotto */
+}
+
+/* ==========================================================================
+   SEZIONE INFERIORE (Testi e Link)
+   ========================================================================== */
+.card-info {
+  padding: 24px;               /* Cuscinetto di spazio interno che fa respirare i testi lontano dai bordi */
+  display: flex;
+  flex-direction: column;      /* Dispone Nome, Ruolo e Link uno sotto l'altro */
+  align-items: flex-start;     /* Allinea rigidamente tutti i testi a sinistra */
+}
+
+/* Il nome proprio (Camilla Crucito) */
+.member-name {
+  font-size: 1.5rem;           /* Carattere grande e d'impatto */
+  font-weight: 700;            /* Scritta in pieno grassetto (Bold) */
+  color: #000000;              /* Nero puro */
+  margin: 0 0 8px 0;           /* Resetta i margini e lascia solo 8px vuoti sotto per staccare il ruolo */
+  letter-spacing: -0.5px;      /* Avvicina impercettibilmente le lettere per un look più moderno */
+}
+
+/* Il ruolo aziendale (CEO and co-founder) */
+.member-role {
+  font-size: 1.1rem;           /* Dimensione leggermente più piccola del nome */
+  font-weight: 400;            /* Scritta normale, non in grassetto */
+  color: #666666;              /* Grigio opaco: crea un distacco visivo e mette in risalto il nome */
+  margin: 0 0 32px 0;          /* Lascia un ampio spazio di 32px sotto per spingere giù il link di Linkedin */
+}
+
+/* Il link cliccabile di Linkedin */
+.linkedin-link {
+  font-size: 1.1rem;
+  font-weight: 500;            
+  color: #4f3cc9;              /* Il colore viola/bluastro che riprende il brand Flowlee */
+  text-decoration: none;       /* Elimina la sottolineatura classica e brutta dei link nativi */
+  
+  display: flex;
+  align-items: center;         /* Allinea verticalmente la parola "Linkedin" sulla stessa linea del razzo */
+  gap: 6px;                    /* Distanzia esattamente di 6px il testo dall'emoji del razzo */
+  transition: opacity 0.2s ease; /* Rende fluida l'animazione di transizione dell'hover */
+}
+
+/* Effetto visivo quando l'utente passa il mouse sopra il link */
+.linkedin-link:hover {
+  opacity: 0.8;                /* Scolorisce leggermente il testo per far capire che è un elemento cliccabile */
+}
+
+/* L'emoji del razzo */
+.rocket-emoji {
+  font-size: 1.2rem;           /* Dimensione leggermente ottimizzata per l'emoji */
+}

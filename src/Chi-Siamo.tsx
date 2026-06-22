@@ -4,7 +4,8 @@ import Gif from './iconf.gif'; // o il percorso reale della tua GIF
 import logo from './logoF.png'; // o il percorso reale del tuo logo
 import "./FooterSection.css"; // Importa lo stile del footer se necessario
 import image3 from "./5.png"; // o il percorso reale della tua immagine
-
+import {Card} from "./components/Card"; // Importa il componente Card se necessario
+import "./card.css"; // Importa lo stile del Card se necessario
 export function ChiSiamo() {
   return (
     /* 1. Il wrapper esterno a tutta larghezza che racchiude tutta la sezione */
@@ -29,6 +30,7 @@ export function ChiSiamo() {
           non che rallenta.
         </h2>
       </div>
+      <Card />
     </div>
   );
 }
