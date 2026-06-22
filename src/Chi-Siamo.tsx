@@ -30,7 +30,14 @@ export function ChiSiamo() {
           non che rallenta.
         </h2>
       </div>
-      <Card />
+      <div className="grid grid-cols-3 w-full px-10 gap-4">
+        <Card />
+        <Card />  
+        <Card />  
+        <Card />  
+        <Card />  
+        <Card />  
+      </div>
     </div>
   );
 }

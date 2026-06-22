@@ -2,7 +2,7 @@
    IL CONTENITORE PRINCIPALE (La Card)
    ========================================================================== */
 .team-card {
-  width: 120%;                 /* Si adatta alla larghezza del contenitore padre */
+  width: 100%;                 /* Si adatta alla larghezza del contenitore padre */
   max-width: 340px;            /* Fissa una larghezza massima per non far sformare la card */
   background-color: #ffffff;   /* Sfondo bianco pulito */
   border-radius: 24px;         /* Angoli molto arrotondati, esattamente come si vede in foto */
@@ -15,8 +15,6 @@
      la curvatura dei 24px di border-radius della card, impedendole di sbrodolare fuori. */
   overflow: hidden;            
   margin: 10px;              /* Centra la card orizzontalmente all'interno del suo contenitore */
-  display: flex;
-  flex-direction: column;      /* Impila gli elementi in verticale: prima la foto, poi i testi */
   transition: transform 0.2s ease; /* Transizione fluida per l'effetto movimento al passaggio del mouse */
 }
 
