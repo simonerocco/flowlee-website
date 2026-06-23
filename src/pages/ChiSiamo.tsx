@@ -1,6 +1,7 @@
 import image3 from '@/assets/5.png'
 import gif from '@/assets/iconf.gif'
 import camilla from '@/assets/camilla.jpeg'
+import irene from '@/assets/irene.jpeg'
 import { Card } from '@/components/Card'
 
 const teamMembers = [
@@ -12,37 +13,37 @@ const teamMembers = [
     imageSrc: camilla,
   },
   {
-    name: 'Camilla Crucito',
-    role: 'CEO and co-founder',
-    category: 'Sales',
+    name: 'Vincenzo Marcella',
+    role: 'CTO and co-founder',
+    category: 'Tech',
     linkedInUrl: 'https://linkedin.com',
     imageSrc: camilla,
   },
   {
-    name: 'Camilla Crucito',
-    role: 'CEO and co-founder',
-    category: 'Sales',
+    name: 'Irene Malcangi',
+    role: 'COO and co-founder',
+    category: 'Operation',
+    linkedInUrl: 'https://linkedin.com',
+    imageSrc: irene,
+  },
+  {
+    name: 'Riccardo De Mei',
+    role: 'UX/UI Designer',
+    category: 'Category',
     linkedInUrl: 'https://linkedin.com',
     imageSrc: camilla,
   },
   {
-    name: 'Camilla Crucito',
-    role: 'CEO and co-founder',
-    category: 'Sales',
+    name: 'Emilia Vertullo',
+    role: 'Visual Designer',
+    category: 'Category',
     linkedInUrl: 'https://linkedin.com',
     imageSrc: camilla,
   },
   {
-    name: 'Camilla Crucito',
-    role: 'CEO and co-founder',
-    category: 'Sales',
-    linkedInUrl: 'https://linkedin.com',
-    imageSrc: camilla,
-  },
-  {
-    name: 'Camilla Crucito',
-    role: 'CEO and co-founder',
-    category: 'Sales',
+    name: 'Martina Gianola',
+    role: 'AI Specialist',
+    category: 'Tech',
     linkedInUrl: 'https://linkedin.com',
     imageSrc: camilla,
   },

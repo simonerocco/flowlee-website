@@ -20,7 +20,7 @@ export function Home() {
           chiederti aggiornamenti manuali.
         </p>
         <div className="mt-8 flex gap-4">
-          <button className="rounded-[24px] bg-[linear-gradient(135deg,#7b55a9_0%,#3b4ca8_100%)] px-7 py-3 text-sm font-medium text-white shadow-[0_4px_14px_rgba(123,85,169,0.2)] transition-all hover:-translate-y-px hover:opacity-95">
+          <button className="rounded-[24px] bg-[linear-gradient(135deg,#7b55a9_0%,#3b4ca8_100%)] px-7 py-3 text-sm font-medium text-white shadow-[0_4px_14px_rgba(123,85,169,0.2)] transition-all hover:-translate-y-[5px] hover:opacity-95">
             Richiedi Demo
           </button>
           <button className="h-[40px] w-[150px] rounded-[30px] border-2 border-purple-600 bg-white text-sm font-semibold text-black transition-all hover:-translate-y-[5px] hover:bg-white/40">
@@ -29,11 +29,7 @@ export function Home() {
         </div>
         <div className="relative mt-16 flex justify-center">
           <img src={image} className="w-full max-w-4xl rounded-3xl shadow-2xl" alt="" />
-          <img
-            src={image2}
-            className="absolute -right-8 -bottom-8 w-64 rounded-2xl shadow-xl"
-            alt=""
-          />
+          <img src={image2} className="absolute -right-8 -bottom-8 w-64" alt="" />
         </div>
       </section>
 
@@ -75,7 +71,7 @@ export function Home() {
 
       <section className="relative my-[100px] flex w-full items-center justify-center">
         <img src={image3} className="block h-auto w-[65%]" alt="" />
-        <h2 className="absolute bottom-[40%] left-1/2 m-0 w-full max-w-[600px] -translate-x-1/2 text-center text-[40px] leading-[1.2] font-bold text-[#1d1d1f]">
+        <h2 className="absolute bottom-[50%] left-1/2 m-0 w-full max-w-[600px] -translate-x-1/2 text-center text-[40px] leading-[1.2] font-bold text-[#1d1d1f]">
           Scopri come
           <br />
           Flowlee può aiutare
