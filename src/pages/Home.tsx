@@ -1,10 +1,11 @@
 import image from '@/assets/2.png'
 import image2 from '@/assets/3.png'
 import image3 from '@/assets/5.png'
-import timeline from '@/assets/timelineprovvisoria.png'
 import { Gifpart } from '@/components/Gifpart'
 import { FaqSection } from '@/components/FaqSection'
 import { FooterSection } from '@/components/FooterSection'
+import { Carousel } from '@/components/Carousel'
+import { Timeline } from '@/components/Timeline'
 
 export function Home() {
   return (
@@ -27,15 +28,20 @@ export function Home() {
             Come Funziona
           </button>
         </div>
-        <div className="relative mt-16 flex justify-center">
+        <div className="relative mt-16 justify-center">
           <img src={image} className="w-full max-w-4xl rounded-3xl shadow-2xl" alt="" />
-          <img src={image2} className="absolute -right-8 -bottom-8 w-64" alt="" />
+          <img
+            src={image2}
+            style={{ width: '420px', bottom: '40px', left: '50%' }}
+            className="absolute"
+            alt=""
+          />
         </div>
       </section>
 
       <section className="px-8 py-16 text-center">
         <p className="bg-gradient-to-l from-[#8466c3] to-[#eb7e7e] bg-clip-text text-[20px] font-bold text-transparent">
-          Chi siamo?
+          CHI SIAMO?
         </p>
         <h2 className="mx-auto mt-4 max-w-2xl text-4xl font-bold text-gray-900">
           Il modo più semplice per organizzare il lavoro, senza appesantire il team.
@@ -46,19 +52,15 @@ export function Home() {
 
       <section className="px-8 py-16 text-center">
         <p className="bg-gradient-to-l from-[#8466c3] to-[#eb7e7e] bg-clip-text text-[20px] font-bold text-transparent">
-          Mai così semplice
+          MAI COSÌ SEMPLICE
         </p>
         <h2 className="mt-4 text-4xl font-bold text-gray-900">Come funziona</h2>
-        <img
-          src={timeline}
-          className="mx-auto mt-12 w-4/5 rounded-[70px] shadow-[0_4px_10px_rgba(123,85,169,0.2)]"
-          alt="Timeline Flowlee"
-        />
+        <Timeline />
       </section>
 
       <section className="px-8 py-16 text-center">
         <p className="bg-gradient-to-l from-[#8466c3] to-[#eb7e7e] bg-clip-text text-[20px] font-bold text-transparent">
-          Interagisci e organizza
+          INTERAGISCI E ORGANIZZA
         </p>
         <h2 className="mt-4 text-4xl font-bold text-gray-900">
           Scrivi, carica, parla. Al resto
@@ -66,12 +68,14 @@ export function Home() {
           pensa Flowlee
         </h2>
       </section>
-
+      <section>
+        <Carousel />
+      </section>
       <FaqSection />
 
       <section className="relative my-[100px] flex w-full items-center justify-center">
-        <img src={image3} className="block h-auto w-[65%]" alt="" />
-        <h2 className="absolute bottom-[50%] left-1/2 m-0 w-full max-w-[600px] -translate-x-1/2 text-center text-[40px] leading-[1.2] font-bold text-[#1d1d1f]">
+        <img src={image3} className="block h-auto w-[70%]" alt="" />
+        <h2 className="absolute inset-0 left-1/2 m-0 flex w-full max-w-[600px] -translate-x-1/2 flex-col items-center justify-center text-center text-[40px] leading-[1.2] font-bold text-[#1d1d1f]">
           Scopri come
           <br />
           Flowlee può aiutare
@@ -79,7 +83,6 @@ export function Home() {
           il tuo team
         </h2>
       </section>
-
       <FooterSection />
     </>
   )

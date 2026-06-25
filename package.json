@@ -14,7 +14,8 @@
     "format": "prettier --write src/",
     "format:check": "prettier --check src/",
     "type-check": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+   "build:css": "npx @tailwindcss/cli -i ./src/styles/index.css -o ./src/styles/output.css"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,js,json,css}": "prettier --write",
@@ -34,6 +35,7 @@
     "@types/bun": "latest",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
+    "daisyui": "^5.5.23",
     "eslint": "^10.5.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "latest",
